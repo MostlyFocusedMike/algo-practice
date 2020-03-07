@@ -1,19 +1,13 @@
-/**
- * @param {number[]} nums
- * @param {number} target
- * @return {number}
- */
 const search = (nums, target) => {
-    const sortedNums = [...nums].sort((a,b) => a - b)
     let left = 0;
-    let right = sortedNums.length - 1;
+    let right = nums.length - 1;
 
     while (left <= right) {
         let pivot = Math.floor(left + ((right - left) / 2));
 
-        if (sortedNums[pivot] === target) {
+        if (nums[pivot] === target) {
             return pivot;
-        } else if (target > sortedNums[pivot]) {
+        } else if (target > nums[pivot]) {
             left = pivot + 1;
         } else {
             right = pivot - 1;
@@ -22,4 +16,5 @@ const search = (nums, target) => {
     return -1;
 };
 
-console.log(search([1,21, 14, 9, 13, 3],1))
+console.log(search([-1,0,1,2,3,4,5],8))
+
