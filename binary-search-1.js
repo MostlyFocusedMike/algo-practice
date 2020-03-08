@@ -3,7 +3,7 @@ const search = (nums, target) => {
     let right = nums.length - 1;
 
     while (left <= right) {
-        let pivot = Math.floor(left + ((right - left) / 2));
+        let pivot = Math.floor((right + left) / 2);
 
         if (nums[pivot] === target) {
             return pivot;
@@ -16,5 +16,5 @@ const search = (nums, target) => {
     return -1;
 };
 
-console.log(search([-1,0,1,2,3,4,5],8))
+console.log(search([-1,0,1,2,3,4,5],2))
 
